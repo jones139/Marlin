@@ -59,7 +59,8 @@
 #
 
 # This defines the board to compile for (see boards.h for your board's ID)
-HARDWARE_MOTHERBOARD ?= 1020
+#HARDWARE_MOTHERBOARD ?= 1315 # GeeTech
+HARDWARE_MOTHERBOARD ?= 1503 # Melzi V2
 
 ifeq ($(OS),Windows_NT)
   # Windows
@@ -69,7 +70,7 @@ else
   UNAME_S := $(shell uname -s)
   ifeq ($(UNAME_S),Linux)
     # Linux
-    ARDUINO_INSTALL_DIR ?= /usr/share/arduino
+    ARDUINO_INSTALL_DIR ?= /usr/local/arduino
     ARDUINO_USER_DIR ?= ${HOME}/Arduino
   endif
   ifeq ($(UNAME_S),Darwin)
@@ -82,8 +83,8 @@ endif
 
 # Arduino source install directory, and version number
 # On most linuxes this will be /usr/share/arduino
-ARDUINO_INSTALL_DIR  ?= ${HOME}/Arduino
-ARDUINO_VERSION      ?= 106
+ARDUINO_INSTALL_DIR  ?= /usr/local/arduino
+ARDUINO_VERSION      ?= 1813
 
 # The installed Libraries are in the User folder
 ARDUINO_USER_DIR ?= ${HOME}/Arduino
